@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-
+const fetch = require('node-fetch'); // Required for API calls
 app.use(cors());
 app.use(express.json());
 
