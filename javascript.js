@@ -152,7 +152,7 @@
 
         // API Handling
         async function getAIResponse(prompt) {
-            const response = await fetch('https://uzair-gpt-backend.onrender.com/api/openrouter', {
+            const response = await fetch('https://favourite-bette-pzmeer-db6fe353.koyeb.app/api/openrouter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt })
