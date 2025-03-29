@@ -2,7 +2,7 @@
 
 A full-stack chatbot with file analysis capabilities, featuring a responsive UI and secure backend API.
 
-## 📸 Project Screenshot
+## 📸 Project live link (https://uzairshafiq473.github.io/mini-bot/)
 
 ![Chatbot Interface Demo](./screenshot.png)  
 *Live chat interface with file upload functionality*
