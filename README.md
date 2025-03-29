@@ -2,7 +2,10 @@
 
 A full-stack chatbot with file analysis capabilities, featuring a responsive UI and secure backend API.
 
-![Demo GIF](./assets/demo.gif) *(Add a short screen recording later)*
+## 📸 Project Screenshot
+
+![Chatbot Interface Demo](./assets/chatbot-demo.png)  
+*Live chat interface with file upload functionality*
 
 ## 🌟 Features
 - Natural language conversations
