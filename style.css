@@ -1,374 +1,304 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* Theme Variables */
 :root {
-    --bg-color: #1c1c2b;
-    --text-color: #ffffff;
-    --chat-container-bg: rgba(255, 255, 255, 0.1);
-    --bot-message-bg: linear-gradient(135deg, #4e4e68, #2b2b40);
-    --user-message-bg: linear-gradient(135deg, #0078ff, #005ecb);
-    --input-bg: rgba(255, 255, 255, 0.15);
-    --file-label-bg: linear-gradient(135deg, #4a5568, #2d3748);
+  --bg-color: #1c1c2b;
+  --text-color: #ffffff;
+  --chat-container-bg: rgba(255, 255, 255, 0.1);
+  --bot-message-bg: linear-gradient(135deg, #4e4e68, #2b2b40);
+  --user-message-bg: linear-gradient(135deg, #0078ff, #005ecb);
+  --input-bg: rgba(255, 255, 255, 0.15);
+  --file-label-bg: linear-gradient(135deg, #4a5568, #2d3748);
+  --header-color: #ffffff;
+  --input-color: #ffffff;
 }
 
 [data-theme="light"] {
-    --bg-color: #f0f2f5;
-    --text-color: #1c1c2b;
-    --chat-container-bg: rgba(0, 0, 0, 0.05);
-    --bot-message-bg: linear-gradient(135deg, #e0e0e0, #d0d0d0);
-    --user-message-bg: linear-gradient(135deg, #0066cc, #0052a3);
-    --input-bg: rgba(0, 0, 0, 0.1);
-    --file-label-bg: linear-gradient(135deg, #d0d0d0, #b0b0b0);
+  --bg-color: #f0f2f5;
+  --text-color: #1c1c2b;
+  --chat-container-bg: rgba(255, 255, 255, 0.9);
+  --bot-message-bg: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+  --user-message-bg: linear-gradient(135deg, #0066cc, #0052a3);
+  --input-bg: rgba(0, 0, 0, 0.1);
+  --file-label-bg: linear-gradient(135deg, #d0d0d0, #b0b0b0);
+  --header-color: #1c1c2b;
+  --input-color: #1c1c2b;
 }
 
+/* Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    transition: background 0.3s, color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .chat-container {
-    width: 100%;
-    max-width: 500px;
-    background: var(--chat-container-bg);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  background: var(--chat-container-bg);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Rest of your existing styles... */
-
-.user-message {
-    background: var(--user-message-bg);
-}
-
-.bot-message {
-    background: var(--bot-message-bg);
-}
-
-#user-input {
-    background: var(--input-bg);
-}
-
-.file-label {
-    background: var(--file-label-bg);
-}
-
-/* Add theme toggle button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 1.5em;
-    background: none;
-    border: none;
-    color: var(--text-color);
-}
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1c1c2b, #111122);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
-
-.chat-container {
-    width: 100%;
-    max-width: 500px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    color: white;
+.chat-container h2 {
+  color: var(--header-color);
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .chat-box {
-    height: 400px;
-    overflow-y: auto;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .message {
-    padding: 12px 18px;
-    border-radius: 15px;
-    max-width: 85%;
-    animation: messageIn 0.3s ease-out forwards;
-    position: relative;
+  padding: 12px 18px;
+  border-radius: 15px;
+  max-width: 85%;
+  animation: messageIn 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .user-message {
-    background: linear-gradient(135deg, #0078ff, #005ecb);
-    align-self: flex-end;
-    margin-right: 5px;
+  background: var(--user-message-bg);
+  align-self: flex-end;
+  margin-right: 5px;
+  color: white;
 }
 
 .bot-message {
-    background: linear-gradient(135deg, #4e4e68, #2b2b40);
-    align-self: flex-start;
-    margin-left: 5px;
+  background: var(--bot-message-bg);
+  align-self: flex-start;
+  margin-left: 5px;
+  color: var(--text-color);
 }
 
 .input-area {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 #user-input {
-    flex: 1;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: none;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    font-size: 14px;
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--input-color);
+  font-size: 14px;
+  min-width: 0; /* Fixes flexbox overflow */
 }
 
 button {
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 80px;
 }
 
 .send-btn {
-    background: linear-gradient(135deg, #28a745, #218838);
-    color: white;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
 }
 
 .mic-btn {
-    background: linear-gradient(135deg, #ff9800, #ff5722);
-    padding: 12px 15px;
-}
-
-/* CSS میں شامل کریں */
-:root {
-    --bg-color: #1c1c2b;
-    --text-color: white;
-}
-
-[data-theme="light"] {
-    --bg-color: #f0f2f5;
-    --text-color: #1c1c2b;
-}
-
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: all 0.3s;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  padding: 12px 15px;
 }
 
 .file-label {
-    background: linear-gradient(135deg, #4a5568, #2d3748);
-    padding: 10px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: block;
-    text-align: center;
-}
-
-.file-label:hover {
-    background: linear-gradient(135deg, #2d3748, #1a202c);
+  background: var(--file-label-bg);
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--text-color);
+  font-size: 0.9rem;
 }
 
 #file-name {
-    color: #a0aec0;
-    font-size: 0.9em;
+  color: #a0aec0;
+  font-size: 0.85em;
 }
 
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  left: 163px;
+  cursor: pointer;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  z-index: 100;
+}
+
+/* Animations */
 @keyframes messageIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Update the light theme variables */
-[data-theme="light"] {
-    --bg-color: #f0f2f5;
-    --text-color: #1c1c2b;
-    --chat-container-bg: rgba(255, 255, 255, 0.9);
-    --header-color: #1c1c2b;
-    /* New variable for header */
-    --input-color: #1c1c2b;
-    /* New variable for input text */
-}
-
-/* Add these rules */
-.chat-container h2 {
-    color: var(--header-color);
-}
-
-#user-input {
-    color: var(--input-color);
-}
-
-/* Update dark theme variables */
-:root {
-    --header-color: #ffffff;
-    --input-color: #ffffff;
-}
-
-/* Add these animations */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes wave {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(10deg);
-    }
-
-    75% {
-        transform: rotate(-10deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-/* Message animations */
-.message {
-    animation: messageIn 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-
-.send-btn:hover,
-.mic-btn:hover {
-    animation: pulse 0.8s infinite;
-}
-
-.theme-toggle:hover {
-    animation: float 1.5s infinite;
-}
-
-.file-label:hover {
-    animation: wave 0.8s ease;
-}
-
-/* Loading animation */
 .typing-indicator {
-    display: flex;
-    padding: 10px;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }
 
 .typing-dot {
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
-    background: var(--text-color);
-    border-radius: 50%;
-    animation: typing 1.4s infinite;
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background: var(--text-color);
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
 }
 
 .typing-dot:nth-child(2) {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .typing-dot:nth-child(3) {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 @keyframes typing {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* Copy button animation */
-.copy-btn {
-    transition: all 0.3s ease;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .chat-container {
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .chat-box {
+    height: 60vh;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .input-area {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  #user-input {
+    padding: 10px 15px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .theme-toggle {
+    top: 20px;
+    left: 180px;
+    font-size: 1.3rem;
+  }
+  
+  .message {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
 }
 
-.copy-btn:hover {
-    transform: scale(1.2);
+@media (max-width: 480px) {
+  .chat-box {
+    height: 65vh;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .file-label {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
 }
 
-/* File upload animation */
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
+/* Special landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .chat-box {
+    height: 50vh;
+  }
 }
 
-.file-upload:has(input:not(:placeholder-shown)) {
-    animation: bounce 0.6s ease;
+/* کوڈ بلاکس کے لئے اسٹائل */
+.code-block {
+  background: #282c34;
+  color: #abb2bf;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-block .lang {
+  display: block;
+  text-align: right;
+  color: #7f848e;
+  font-size: 0.8em;
+  margin-bottom: 5px;
 }
